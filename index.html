@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>My web page| My Portfolio</title>
-    <base href="localhost">
+<!--    <base href="localhost">-->
     <meta content="chamuditha,lakshan,wickramarathna" name="keywords">
     <meta content="this is details about chamuditha,you can see about chamuditha's info." name="description">
     <meta content="chamuditha" name="author">
@@ -19,13 +19,24 @@
 <body>
 <header></header>
 <main>
-    <section></section>
+    <section>
+        <nav>
+            <menu>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about me">About us</a></li>
+                <li><a href="#contact">Contact us</a></li>
+                <li><a href="#gallery">Gallary</a></li>
+
+            </menu>
+        </nav>
+    </section>
 
     <section>
         <section>
             <article>
                 <h1>
-                    About me
+                   <dfn id="about me"> About me </dfn>
+
                 </h1>
                 <p>
                     I am Chamuditha and currently learning programming.
@@ -51,7 +62,7 @@
         <h1>Skills</h1>
     </section>
     <section>
-        <h1>Gallery</h1>
+        <h1> <dfn id="gallery">Gallery</dfn></h1>
         <img src="assets/gallery%201.png">
         <img src="assets/gallery%202.png">
     </section>
@@ -65,7 +76,7 @@
                     <li>Home</li>
                     <li>About us</li>
                     <li>Gallary</li>
-                    <li>Contact</li>
+                    <li> <dfn id="contact"> Contact </dfn></li>
                 </ul>
             </nav>
         </section>
