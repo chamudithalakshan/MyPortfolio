@@ -1,0 +1,13 @@
+.navbar{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+.navBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 25px;
+}
