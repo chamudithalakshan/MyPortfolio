@@ -99,3 +99,37 @@
     width: 100%;
     height: 100vh;
 }
+
+.aboutMe{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.subAboutMeDIv{
+    width: 50%;
+}
+
+.elignProhilePic{
+    display: flex;
+    justify-content: center;
+    padding-right: 5px;
+    align-items: center;
+}
+
+.proImg{
+   margin-left: 130px;
+}
+
+.abtMeTxt{
+    font-style: italic;
+}
+
+.adtMeHr{
+    background-color: #ffc107;
+    height: 10px;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    display: none;
+}
