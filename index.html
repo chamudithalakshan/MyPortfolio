@@ -12,10 +12,10 @@
     <meta content="#1e81b0" name="theme-color">
     <meta content="with=device-width initial-scale=1" name="viewport">
     <!-- <meta http-equiv="refresh" content="3;https://ijse.lk"> -->
+    <link href="assets/css/normalize.css" rel="stylesheet">
     <link href="fav icon.png" rel="icon">
     <link href="assets/style/Styles.css" rel="stylesheet">
     <!-- <link rel="canonical" href="ijse.lk"> -->
-    <link href="lib/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,23 +27,30 @@
             <button class="glow-on-hover" type="button">Download resume</button>
         </div>
     </div>
-    <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleSlidesOnly">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="5000">
-                <img alt="..."
-                     class="d-block  imgSize" src="assets/carousalImg/bicycle-hd-wallpapers---background-images--cyclist-1080p-2k-4k-5k-hd-wallpapers-free-download.jpg">
+    <div id="SliderWrapper">
+        <div class="" id="SlidderSecondlyWrapper">
+            <div class="sliderItem" id="slider1">
+                <!--                <img alt="..."-->
+                <!--                     class=""-->
+                <!--                     src="assets/carousalImg/bicycle-hd-wallpapers-&#45;&#45;background-images&#45;&#45;cyclist-1080p-2k-4k-5k-hd-wallpapers-free-download.jpg">-->
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img alt="..." class="d-block imgSize" src="assets/carousalImg/Download-hd-wallpapers-1080p-screen.jpg">
+            <div class="sliderItem" id="slider2">
+                <!--                <img alt="..." class="d-block imgSize" src="assets/carousalImg/Download-hd-wallpapers-1080p-screen.jpg">-->
             </div>
-            <div class="carousel-item" data-bs-interval="5000">
-                <img alt="..." class="d-block imgSize" src="assets/carousalImg/pexels-pixabay-326055.jpg">
+            <div class="sliderItem" id="slider3">
+                <!--                <img alt="..." class="" src="assets/carousalImg/pexels-pixabay-326055.jpg">-->
             </div>
+            <div class="sliderItem" id="slider4">
+                <!--                <img alt="..." class="" src="assets/carousalImg/pexels-pixabay-326055.jpg">-->
+            </div>
+
+
         </div>
     </div>
+
 </header>
 <main>
-    <section class="sticky-top">
+    <section class="">
         <nav class="navbar">
             <div class="navBtn"><a href="#">Home</a></div>
             <div class="navBtn"><a href="#about me">About us</a></div>
@@ -54,9 +61,9 @@
 
     <section>
         <div class="aboutMe">
-            <div class="subAboutMeDIv ms-4" >
+            <div class="subAboutMeDIv ms-4">
 
-                <h1 id="about me" class="abtMeTxt">
+                <h1 class="abtMeTxt" id="about me">
                     About me
                 </h1>
                 <hr class="adtMeHr">
@@ -67,10 +74,16 @@
                     I start my journey with IJSE on 2021. And my journey has far more to go
                 </p>
 
+
             </div>
+
             <div class="subAboutMeDIv elignProhilePic">
+
                 <div class="proImg">
-                    <img  src="assets/my%20img.jpg" height="520">
+
+                    <img height="520" src="assets/my%20img.jpg">
+
+
                 </div>
             </div>
         </div>
@@ -79,11 +92,58 @@
     </section>
     <section>
         <h1>Education</h1>
-        <img src="assets/education.png">
+        <hr class="hrEducation">
+        <div id="Educationwrapper">
+            <img src="assets/education.png">
+        </div>
     </section>
     <section>
-        <h1>Projects i've Done</h1>
-        <nav></nav>
+        <div id="ProjectHead">
+            <h1>Projects i've Done</h1>
+        </div>
+        <hr id="HrProject">
+        <div>
+            <nav>
+                <ul id="ProjectUl">
+                    <li class="pMenu">JAVA</li>
+                    <li class="pMenu">HTML</li>
+                    <li class="pMenu">JAVA SCRIPT</li>
+                    <li class="pMenu">VIEW ALL</li>
+                </ul>
+
+            </nav>
+        </div>
+        <div id="javaProjects">
+            <div id="javaFirst">
+                <div class="image_blur image_overlay">
+                    <h1>Design this POS system as a first database connected project on JAVA.<br>View source on <br><br><a
+                            href="">github</a>
+                    </h1>
+                </div>
+
+            </div> <div id="javaSec">
+                <div class="image_blur image_overlay">
+                    <h1>I design this project as my first, in memory javafx project <br>View source on <br><br><a
+                            href="">github</a>
+                    </h1>
+                </div>
+
+            </div> <div id="javaThird">
+                <div class="image_blur image_overlay">
+                    <h1>Design this as my final project of semester one. Designed for computer shop<br>View source on
+                        <br><br><a href="">github</a>
+                    </h1>
+                </div>
+
+            </div> <div id="javaFourth">
+                <div class="image_blur image_overlay">
+                    <h1>Design this as my first project that used Hibernate<br>View source on
+                        <br><br><a href="">github</a>
+                    </h1>
+                </div>
+
+            </div>
+        </div>
     </section>
     <section>
         <h1>Skills</h1>
