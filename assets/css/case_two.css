@@ -1,3 +1,48 @@
+@media all and (min-width: 320px ) and (max-width: 375px) {
+    body > header > img {
+
+        left: 4px;
+    }
+
+    body > header > nav > menu {
+
+        left: 26px;
+
+    }
+    body > main > section:nth-child(1) {
+        /* width: 300px; */
+        /* height: 100%; */
+        /* background-color: deepskyblue; */
+        /* color: white; */
+        /* position: absolute; */
+
+        display: none;
+        /* margin: auto; */
+    }
+    body > main > section:nth-child(2) {
+        margin-left: 15px!important;
+        margin-right: 26px;
+    }
+    body > header > nav > menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        font-size: 15px;
+    }
+    section > section {
+
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    body > header > nav > menu > li {
+        /*display: inline-block;*/
+         margin-left: 2px!important;
+         margin-right: 2px!important;
+    }
+
+}
+
 
 header {
     position: fixed;
@@ -83,33 +128,35 @@ body > main > section:nth-child(2) > section > div {
     width: calc(100% / 3);
     position: relative;
 }
-section>section{
+
+section > section {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
-section>section>div{
+
+section > section > div {
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
 }
 
-    /*body > main > section:nth-child(2) > section > div:nth-child(1) {*/
-    /*    position: absolute;*/
-    /*    left: 0;*/
-    /*}*/
+/*body > main > section:nth-child(2) > section > div:nth-child(1) {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*}*/
 
-    /*body > main > section:nth-child(2) > section > div:nth-child(2) {*/
-    /*    position: absolute;*/
-    /*    left: calc(100% / 3);*/
-    /*}*/
+/*body > main > section:nth-child(2) > section > div:nth-child(2) {*/
+/*    position: absolute;*/
+/*    left: calc(100% / 3);*/
+/*}*/
 
-    /*body > main > section:nth-child(2) > section > div:nth-child(3) {*/
-    /*    position: absolute;*/
-    /*    right: 0;*/
+/*body > main > section:nth-child(2) > section > div:nth-child(3) {*/
+/*    position: absolute;*/
+/*    right: 0;*/
 
-    /*}*/
+/*}*/
 
 
 /*body > main > section:nth-child(2) > section > div > img {*/
@@ -134,6 +181,7 @@ footer > p {
     font-weight: bold;
     padding-top: 20px
 }
+
 menu {
     list-style-type: none;
 }

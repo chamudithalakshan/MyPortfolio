@@ -2,12 +2,28 @@
     scroll-behavior: smooth;
 
 }
+header{
+    z-index: 2;
+    position: relative;
+}
+.navSec{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 
 .navbar {
+    position: sticky;
     width: 100%;
     background-color: black;
     display: flex;
     justify-content: center;
+    position: sticky;
+
+}
+.navbar>div>a{
+    color: white;
 }
 
 .navBtn {
