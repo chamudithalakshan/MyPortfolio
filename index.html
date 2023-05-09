@@ -121,21 +121,24 @@
                     </h1>
                 </div>
 
-            </div> <div id="javaSec">
+            </div>
+            <div id="javaSec">
                 <div class="image_blur image_overlay">
                     <h1>I design this project as my first, in memory javafx project <br>View source on <br><br><a
                             href="">github</a>
                     </h1>
                 </div>
 
-            </div> <div id="javaThird">
+            </div>
+            <div id="javaThird">
                 <div class="image_blur image_overlay">
                     <h1>Design this as my final project of semester one. Designed for computer shop<br>View source on
                         <br><br><a href="">github</a>
                     </h1>
                 </div>
 
-            </div> <div id="javaFourth">
+            </div>
+            <div id="javaFourth">
                 <div class="image_blur image_overlay">
                     <h1>Design this as my first project that used Hibernate<br>View source on
                         <br><br><a href="">github</a>
@@ -146,12 +149,171 @@
         </div>
     </section>
     <section>
-        <h1>Skills</h1>
+        <div>
+            <h1 class="hrAlign">Skills</h1>
+        </div>
+        <div>
+            <div>
+                <div id="java">
+                    <svg class="svg" height="160px" version="1.1" width="160px" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50%" cy="50%" id="javaCircle" r="70" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h1 id="javaPercentage"></h1>
+            </div>
+            <div>
+                <div id="html">
+
+                    <svg class="svg" height="160px" version="1.1" width="160px" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50%" cy="50%" id="htmlCircle" r="70" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h1 id="htmlPercentage"></h1>
+            </div>
+            <div>
+                <div id="css">
+                    <svg class="svg" height="160px" version="1.1" width="160px" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50%" cy="50%" id="cssCircle" r="70" stroke-linecap="round"/>
+                    </svg>
+
+                </div>
+                <h1 id="cssPercentage"></h1>
+
+            </div>
+            <div>
+                <div id="javaScript">
+                    <svg class="svg" height="160px" version="1.1" width="160px" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50%" cy="50%" id="jsCircle" r="70" stroke-linecap="round"/>
+                    </svg>
+
+                </div>
+                <h1 id="jsPercentage"></h1>
+            </div>
+            <div>
+                <div id="mysql">
+                    <svg class="svg" height="160px" version="1.1" width="160px" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63"/>
+                                <stop offset="100%" stop-color="#673ab7"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50%" cy="50%" id="mySqlCircle" r="70" stroke-linecap="round"/>
+                    </svg>
+
+                </div>
+                <h1 id="sqlPercentage"></h1>
+            </div>
+        </div>
+        <script>
+            let number = document.getElementById("javaPercentage");
+            let counter = 0;
+            setInterval(() => {
+                if (counter == 80) {
+                    clearInterval();
+                } else {
+                    counter += 1;
+                    number.innerHTML = counter + "%";
+                }
+            }, 38)
+
+            let number2 = document.getElementById("htmlPercentage");
+            let counter2 = 0;
+            setInterval(() => {
+                if (counter2 == 60) {
+                    clearInterval();
+                } else {
+                    counter2 += 1;
+                    number2.innerHTML = counter2 + "%";
+                }
+            }, 49)
+
+            let number3 = document.getElementById("cssPercentage");
+            let counter3 = 0;
+            setInterval(() => {
+                if (counter3 == 40) {
+                    clearInterval();
+                } else {
+                    counter3 += 1;
+                    number3.innerHTML = counter3 + "%";
+                }
+            }, 80)
+
+            let number4 = document.getElementById("jsPercentage");
+            let counter4 = 0;
+            setInterval(() => {
+                if (counter4 == 5) {
+                    clearInterval();
+                } else {
+                    counter4 += 1;
+                    number4.innerHTML = counter4 + "%";
+                }
+            }, 550)
+
+
+            let number5 = document.getElementById("sqlPercentage");
+            let counter5 = 0;
+            setInterval(() => {
+                if (counter5 == 70) {
+                    clearInterval();
+                } else {
+                    counter5 += 1;
+                    number5.innerHTML = counter5 + "%";
+                }
+            }, 45)
+        </script>
     </section>
     <section>
-        <h1><dfn id="gallery">Gallery</dfn></h1>
-        <img src="assets/gallery%201.png">
-        <img src="assets/gallery%202.png">
+        <div>
+            <h1><dfn id="gallery">Gallery</dfn></h1>
+        </div>
+<!--        <img src="assets/gallery%201.png">-->
+<!--        <img src="assets/gallery%202.png">-->
+        <div class="container">
+            <div class="img1">
+                <div class="image_blur image_overlay">
+                    <h1>360 Hotel matara near the polhena beach</h1>
+                </div>
+            </div>
+            <div class="img2">
+                <div class="image_blur image_overlay">
+                    <h1>Sigiriya is an ancient rock fortress and palace built by King Kashyapa <br>during the reign of
+                        473 - 495 which is standing majestically 660 feet straight up.
+                        <br>It is located in the northern Matale district <br>near the town of Dambulla <br>in central
+                        province of Sri Lanka.</h1>
+                </div>
+
+            </div>
+            <div class="img3">
+                <div class="image_blur image_overlay">
+                    <h1><a href="">See more</a></h1>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 <footer>

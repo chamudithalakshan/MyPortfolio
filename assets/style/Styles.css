@@ -11,6 +11,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
+    z-index: 9999;
 }
 
 .navbar {
@@ -336,6 +337,261 @@ header{
 #javaFourth {
     background: url("../carousalImg/Download-hd-wallpapers-1080p-screen.jpg");
     background-size: cover;
+}
+
+#javaCircle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 0.95vw;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: skillJava 8s linear forwards;
+    animation-iteration-count: infinite;
+    r: 70;
+
+}
+
+#htmlCircle {
+    stroke-width: 0.4vw;
+    r: 70;
+}
+
+#cssCircle {
+    stroke-width: 0.4vw;
+    r: 70;
+}
+
+#jsCircle {
+    stroke-width: 0.4vw;
+    r: 70;
+}
+
+#mySqlCircle {
+    stroke-width: 0.4vw;
+    r: 70;
+}
+
+#percentageHolder {
+    /*width: 100%;
+    height: 20px;
+    !* background-color: #F40064; *!
+    display: flex;
+    justify-content: space-around;
+    align-items: center;*/
+    display: none;
+}
+#skillWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+main > section:nth-child(5) > div:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+    width: 100%;
+}
+#skillWrapper > *:hover {
+    transform: scale(1.08);
+    transition-property: transform;
+    transition-duration: 0.25s;
+}
+
+#java {
+    background: url("../java.png");
+    background-size: cover;
+    display: flex;
+    /* justify-items: center; */
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+#html {
+    background: url("../html.png");
+    background-size: cover;
+}
+
+#css {
+    background: url("../css.png");
+    background-size: cover;
+}
+
+#javaScript {
+    background: url("../js.png");
+    background-size: cover;
+}
+
+#mysql {
+    background: url("../sql.png");
+    background-size: cover;
+}
+
+#htmlCircle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 1vw;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: skillHtml 8s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+#cssCircle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 1vw;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: skillCss 8s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+#jsCircle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 1vw;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: skillJs 8s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+#mySqlCircle {
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 1vw;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: skillMysql 8s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+
+svg {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1000; */
+}
+
+@keyframes skillJava {
+    40%, 100% {
+        stroke-dashoffset: 94.4;
+    }
+}
+
+@keyframes skillHtml {
+    40%, 100% {
+        stroke-dashoffset: 188.8;
+    }
+}
+
+@keyframes skillCss {
+    40%, 100% {
+        stroke-dashoffset: 283.2;
+    }
+}
+
+@keyframes skillJs {
+    40%, 100% {
+        stroke-dashoffset: 448.4;
+    }
+}
+
+@keyframes skillMysql {
+    40%, 100% {
+        stroke-dashoffset: 141.6;
+    }
+}
+
+#percentageHolder {
+    width: 100%;
+    height: 20px;
+    /*
+    background-color: #F40064;
+    */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main > section:nth-child(5) {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:100;
+}
+main > section:nth-child(5) > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+main > section:nth-child(5) > div:nth-child(1) > h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    color: #313131;
+    border-bottom: 2px solid #4d4d4d;
+}
+
+main > section:nth-child(5) > div:nth-child(2) > div {
+    width: 160px;
+    height: 160px;
+    /* border: 12px solid #494e56; */
+    border-radius: 100%;
+    /* transform: rotate(
+-45deg
+); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+main > section:nth-child(5) > div:nth-child(2) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-gap: 20px;
+}
+.img1 {
+    height: 400px;
+    background: url("../gallery 2.png");
+    background-size: cover;
+    grid-row: 1/3;
+    width: 600px;
+    border-radius: 8px;
+}
+
+.img2 {
+    background: url("../gallery 1.png");
+    background-size: cover;
+    height: 200px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.img3 {
+    background: url("../gallery 3.jpg");
+    background-size: cover;
+    height: 200px;
+    width: 300px;
+    border-radius: 8px;
 }
 
 ::-webkit-scrollbar {
