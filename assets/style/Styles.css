@@ -565,9 +565,13 @@ main > section:nth-child(5) > div:nth-child(2) {
 }
 
 .container {
+    position: relative;
+    top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 0fr);
     grid-gap: 20px;
+    justify-content: center;
+
 }
 .img1 {
     height: 400px;
@@ -592,6 +596,32 @@ main > section:nth-child(5) > div:nth-child(2) {
     height: 200px;
     width: 300px;
     border-radius: 8px;
+}
+
+#emailField {
+    padding-right: 4px;
+}
+
+#emailTxt {
+    width: 278px;
+    height: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    border: 0;
+}
+#btnSubmit {
+    width: 93px;
+    height: 35px;
+    background-color: #CE0000;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #dedede;
+    font-weight: 700;
+    cursor: pointer;
+}
+.hideOnDefualt {
+    display: none;
 }
 
 ::-webkit-scrollbar {
