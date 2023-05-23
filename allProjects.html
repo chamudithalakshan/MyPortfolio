@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Projects</title>
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <base rel="noopener noreferrer" target="_blank">
+    <link href="assets/icons/favIcon.png" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+</head>
+<style>
+    body {
+        width: 100vw;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px 20px;
+        background: linear-gradient(180deg, #0d45b4, #45dabe);
+    }
+
+    body > a > div:hover {
+        transform: scale(1.02);
+        transition-property: transform;
+        transition-duration: 0.25s;
+    }
+
+    body > div {
+        width: 300px;
+        height: 300px;
+        border-radius: 8px;
+        background-color: red;
+    }
+
+    body > a > div {
+        width: 300px;
+        height: 300px;
+        border-radius: 8px;
+    }
+
+    body > h1 {
+        width: 100vw;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        color: #F5F5F5;
+        font-weight: 600;
+    }
+
+    /* body > div:nth-child(1) {
+         background: url("assets/images/all-projects/1.png");
+         background-size: cover;
+
+     }*/
+    body > a:nth-child(2) > div /**/
+    {
+        background: url("assets/all-projects/1.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(3) > div {
+        background: url("assets/all-projects/Case Two - Google Chrome 5_16_2023 4_34_51 PM.png");
+        background-size: cover;
+
+    }
+
+    body > a:nth-child(4) > div {
+        background: url("assets/all-projects/3.png");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    body > a:nth-child(5) > div {
+        background: url("assets/all-projects/4.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(6) > div {
+        background: url("assets/all-projects/5.png");
+        background-size: cover;
+    }
+
+    body > a:nth-child(7) > div {
+        background: url("assets/all-projects/6.png");
+        background-size: cover;
+    }
+
+    body > a:nth-child(8) > div {
+        background: url("assets/all-projects/7.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(9) > div {
+        background: url("assets/all-projects/Title - Google Chrome .png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(10) > div {
+        background: url("");
+        background-size: cover;
+    }
+
+    body > a:nth-child(11) > div {
+        background: url("");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(12) > div {
+        background: url("");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(13) > div {
+        background: url("");
+        background-size: cover;
+        background-position: center;
+    }
+
+    body > a:nth-child(14) > div {
+        background: url("");
+        background-size: cover;
+        background-position: center;
+    }
+
+    #javaFirst {
+        background: url("");
+        background-size: cover;
+
+    }
+
+    #javaSec {
+        background: url("");
+        background-size: cover;
+    }
+
+    #javaThird {
+        background: url("");
+        background-size: cover;
+    }
+
+    #javaFourth {
+        background: url("");
+        background-size: cover;
+    }
+
+    .image_overlay {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.25s;
+    }
+
+    .image_overlay > * {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+    }
+
+    .image_overlay > h1 {
+        text-align: center;
+        color: #F5F5F5;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .image_overlay > h1 > a {
+        text-decoration: none;
+        color: #5eb9fb;
+    }
+
+    .image_blur {
+        backdrop-filter: blur(10px);
+    }
+
+    .image_overlay:hover > * {
+        transform: translateY(0);
+    }
+
+    .image_overlay:hover {
+        opacity: 1;
+    }
+
+    .bg-area {
+        position: fixed;
+        left: -50%;
+        right: -50%;
+        top: 0;
+        bottom: 0;
+        animation: animate 5s ease-in-out infinite alternate;
+        background: linear-gradient(90deg, #F40064 50%, #0d45b4 -50%);
+        opacity: 0.3;
+        z-index: -1;
+    }
+
+    .layer2 {
+        animation-direction: alternate-reverse;
+        animation-duration: 3s;
+    }
+
+    .layer3 {
+        animation-duration: 5s;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(50%);
+        }
+    }
+
+</style>
+<body>
+<h1>All Projects I have done</h1>
+
+<a href="assignment/css/CaseOne.html">
+    <div></div>
+</a>
+<a href="assignment/css/CaseTwo.html">
+    <div></div>
+</a>
+<a href="assignment/css/CaseThree.html">
+    <div></div>
+</a>
+<a href="assignment/css/CaseFour.html">
+    <div></div>
+</a>
+<a href="assignment/css/animation/caseThree/caseThree.html">
+    <div></div>
+</a>
+<a href="assignment/css/animation/caseFive/index.html">
+    <div></div>
+</a>
+<a href="assignment/css/animation/case_six/index.html">
+    <div></div>
+</a>
+<a href="assignment/css/transition/caseOne/index.html">
+    <div></div>
+</a>
+<a href="CSS_Transition/case%201/index.html">
+    <div></div>
+</a>
+<a href="CSS_Transition/case%202/index.html">
+    <div></div>
+</a>
+<a class="js" href="JS/KITT/index.html" id="js1">
+    <div></div>
+</a>
+<a class="js" href="JS/Que/index.html" id="js2">
+    <div></div>
+</a>
+<a class="js" href="JS/SPA/invoice.html" id="js3">
+    <div></div>
+</a>
+<div id="javaFirst">
+    <div class="image_blur image_overlay">
+        <h1>Design this POS system as a first database connected project on JAVA.<br>View source on <br><br><a
+                href="https://github.com/Sithum-DIlshan/Super-Market-Project/tree/main/SuperMarket">github</a>
+        </h1>
+    </div>
+</div>
+<div id="javaSec">
+    <div class="image_blur image_overlay">
+        <h1>I design this project as my first, in memory javafx project <br>View source on <br><br><a
+                href="https://github.com/Sithum-DIlshan/Vehicle-Parking-System/tree/master/Vehicle%20Parking%20System">github</a>
+        </h1>
+    </div>
+</div>
+<div id="javaThird">
+    <div class="image_blur image_overlay">
+        <h1>Design this as my final project of semester one. Designed for computer shop<br>View source on
+            <br><br><a href="https://github.com/Sithum-DIlshan/Computer-shop/tree/main/Computer%20Shop">github</a>
+        </h1>
+    </div>
+</div>
+<div id="javaFourth">
+    <div class="image_blur image_overlay">
+        <h1>Design this as my first project that used Hibernate<br>View source on
+            <br><br><a href="https://github.com/Sithum-DIlshan/Hbernate">github</a>
+        </h1>
+    </div>
+</div>
+
+
+<main>
+    <div class="bg-area"></div>
+    <div class="bg-area layer2"></div>
+    <div class="bg-area layer3"></div>
+</main>
+</body>
+</html>
