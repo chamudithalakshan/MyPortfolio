@@ -15,7 +15,8 @@
     <!--nav logo-->
     <nav class="navbar navbar-expand-lg bg-light" style="background-color: #6c757d">
         <div class="container-fluid shadow p-3 mb-3 bg-body rounded">
-            <img height="70" src="../inMemoryPos/assets/image/shopping-cart-svg-png-icon-download-28.png" width="70">
+            <img height="70" src="../inMemoryPos/assets/image/shopping-cart-svg-png-icon-download-28.png"
+                 width="70">
             <a class="navbar-brand" href="#"> Food Store</a>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-bs-target="#navbarSupportedContent"
@@ -85,7 +86,8 @@
                         <div class="card-header bg-warning font-weight-bolder"><h3>Items</h3></div>
                         <div class="card-body">
                             <div class="dash-tile-icon">
-                                <img height="70" src="../inMemoryPos/assets/image/bag%20-%20Copy.png" width="70">
+                                <img height="70" src="../inMemoryPos/assets/image/bag%20-%20Copy.png"
+                                     width="70">
                             </div>
                             <div class="dash-tile-text text-lg-end text-black"><h2>335</h2></div>
                         </div>
@@ -108,7 +110,8 @@
                         <div class="card-body">
                             <div class="dash-tile-icon" style="">
                                 <img height="70"
-                                     src="../inMemoryPos/assets/image/house-black-silhouette-without-door.png" width="70">
+                                     src="../inMemoryPos/assets/image/house-black-silhouette-without-door.png"
+                                     width="70">
                             </div>
                             <div class="dash-tile-text text-lg-end text-black"><h2>50</h2></div>
                         </div>
@@ -190,7 +193,7 @@
     <br><br>
 
     <section class="container-fluid">
-        <table class="table table-striped">
+        <table aria-selected="true" class="table table-striped">
             <thead class="table-dark">
             <tr>
                 <th scope="col">Cus ID</th>
@@ -255,6 +258,10 @@
             <button class="btn btn-warning" id="btnUpdateItem" type="button">Update
                 Item
             </button>
+            <!--      load all data to table-->
+            <button class="btn btn-warning" id="btnLoadAllItem" type="button">load all
+                Item
+            </button>
 
             <!-- Button trigger modal -->
             <button class="btn btn-danger" id="btnDeleteIItem" type="button">Delete
@@ -304,8 +311,8 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label class="form-label" for="inputCustomerID">Customer ID:</label>
-                        <select aria-label="Default select example" class="form-select" id="inputCustomerID">
-                            <option selected>Select Customer</option>
+                        <select aria-label="Default select example" class="form-select" id="inputCustomerID" onchange="setDetails(this.value)">
+
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
@@ -331,13 +338,15 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label class="form-label" for="inputItemCode">Item Code:</label>
-                        <select aria-label="Default select example" class="form-select" id="inputItemCode">
+                        <select aria-label="Default select example" class="form-select" id="inputItemCode" onchange="setIDetails(this.value)">
                             <option selected>Select Item</option>
                         </select>
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
                         <label class="form-label" for="itemName">Item Name:</label>
                         <input class="form-control" disabled id="itemName" type="text">
+
+
                     </div>
                 </div>
                 <div class="row mt-1">
@@ -521,26 +530,103 @@
         $('#PlaceOrderform').css('display', 'none');
         $('#AllOrderform').css('display', 'block');
     });
+    let cus=/^(C00-)[0-9]{3}$/;
+
+    $("#txtCustomerID").keyup(function (event){
+        cus=/^(C00-)[0-9]{3}$/;
+        let b = cus.test($("#txtCustomerID").val());
+        if(b){
+            $("#txtCustomerID").css("border","2px solid green");
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+
+                $("#txtCustomerName").focus();
+            }
+
+
+        }else {
+            $("#txtCustomerID").css("border","2px solid red");
+        }
+
+    });
+
+    $("#txtCustomerName").keyup(function (event){
+
+        let check=/[a-z]{5}/.test($("#txtCustomerName").val())
+
+        if (check){
+            $("#txtCustomerName").css("border","2px solid green");
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                $("#txtCustomerAddress").focus();
+
+            }
+
+        }else {
+            $("#txtCustomerName").css("border","2px solid red");
+        }
+    });
+
+    $("#txtCustomerAddress").keyup(function (event){
+
+        let check=/[a-z]{5}/.test($("#txtCustomerAddress").val())
+
+        if (check){
+            $("#txtCustomerAddress").css("border","2px solid green");
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                $("#txtCustomerSalary").focus();
+
+            }
+
+        }else {
+            $("#txtCustomerAddress").css("border","2px solid red");
+        }
+    });
+
+    $("#txtCustomerSalary").keyup(function (event){
+
+        let check=/('(?!0$)[0-9]+(?:\\.[0-9]+)?')/.test($("#txtCustomerSalary").val())
+
+        if (check){
+            $("#txtCustomerAddress").css("border","2px solid green");
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                $("#btnSaveCustomer").focus();
+
+            }
+
+        }else {
+            $("#txtCustomerSalary").css("border","2px solid red");
+        }
+    });
+
+
 
 
     /*In class assignment*/
-    // let customerID = $("#txtCustomerID").val();
-    // let customerName = $("#txtCustomerName").val();
-    // let customerAddress = $("#txtCustomerAddress").val();
-    // let customerSalary = $("#txtCustomerSalary").val();
+
+
+    // error
+
     let cDetails = [];
     $("#btnSaveCustomer").click(function () {
-        let customerID = $("#txtCustomerID").val();
-        let customerName = $("#txtCustomerName").val();
-        let customerAddress = $("#txtCustomerAddress").val();
-        let customerSalary = $("#txtCustomerSalary").val();
-
-       let cust={customerID,customerName,customerAddress,customerSalary};
-          cDetails.push(cust);
+            let customerID = $("#txtCustomerID").val();
+            let customerName = $("#txtCustomerName").val();
+            let customerAddress = $("#txtCustomerAddress").val();
+            let customerSalary = $("#txtCustomerSalary").val();
+            // let customerID = $("#txtCustomerID").val();
 
 
+            let cust = {customerID, customerName, customerAddress, customerSalary};
+            let number = cDetails.push(cust);
+            if (number != 0) {
+                clearCustomerTextField();
+            }
 
-
+            loadAllCustomers();
+            customerTableSelect();
+        }
         // cDetails = [customerID, customerName, customerAddress, customerSalary];
         // let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerSalary}</td></tr>`;
         //  let row = `<tr><td>${cDetails}</td><td>${cDetails[1]}</td><td>${cDetails[2]}</td><td>${cDetails[3]}</td></tr>`;
@@ -548,15 +634,39 @@
 
         // $("#tblCustomer").append(row);
 
-    });
 
-    $("#btnLoadAll").click(function (){
+    );
+
+
+
+    function clearCustomerTextField() {
+        $("#txtCustomerID").val("");
+        $("#txtCustomerName").val("");
+        $("#txtCustomerAddress").val("");
+        $("#txtCustomerSalary").val("");
+        $("#txtCustomerID").focus();
+
+    }
+
+    function clearItemTextField() {
+        $("#txtItemCode").val("");
+        $("#txtItemName").val("");
+        $("#txtUnitPrice").val("");
+        $("#txtQTY").val("");
+        $("#txtItemCode").focus();
+
+    }
+
+
+    //laod all customer data to table
+
+    $("#btnLoadAll").click(function () {
         $("#tblCustomer").empty();
         for (let i = 0; i < cDetails.length; i++) {
-            let id=cDetails[i].customerID;
-            let name=cDetails[i].customerName;
-            let address=cDetails[i].customerAddress;
-            let salary=cDetails[i].customerSalary;
+            let id = cDetails[i].customerID;
+            let name = cDetails[i].customerName;
+            let address = cDetails[i].customerAddress;
+            let salary = cDetails[i].customerSalary;
 
 
             let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
@@ -564,9 +674,211 @@
 
             $("#tblCustomer").append(row);
         }
+        customerTableSelect();
+
+    });
+
+    let itemDetails = [];
+    $("#btnSaveItem").click(function () {
+        let itemCode = $("#txtItemCode").val();
+        let itemName = $("#txtItemName").val();
+        let itemQty = $("#txtQTY").val();
+        let itemUnitePrice = $("#txtUnitPrice").val();
+
+        let item = {itemCode, itemName, itemQty, itemUnitePrice};
+        let number1 = itemDetails.push(item);
+        if (number1 != 0) {
+            clearItemTextField();
+        }
+        loadAllItem();
+        ItemTableSelect();
+    });
+
+    $("#btnLoadAllItem").click(function () {
+        $("#tblItems").empty();
+        for (let j = 0; j < itemDetails.length; j++) {
+            let code = itemDetails[j].itemCode;
+            let iName = itemDetails[j].itemName;
+            let iQty = itemDetails[j].itemQty;
+            let iUnitePrice = itemDetails[j].itemUnitePrice;
+
+            let iRow = `<tr><td>${code}</td><td>${iName}</td><td>${iQty}</td><td>${iUnitePrice}</td></tr>`;
+            $("#tblItems").append(iRow);
+        }
+        ItemTableSelect();
+    });
+
+    function loadAllCustomers() {
+        $('#inputCustomerID').empty();
+        $('#inputCustomerID').append('<option selected>Select Customer</option>');
+        for (let index in cDetails) {
+            let option = $('<option value="' + index + '">' + cDetails[index].customerID + '</option>');
+            $('#inputCustomerID').append(option)
+
+
+            $("#orderId").val($.now());
+
+        }
+    }
+
+    function loadAllItem() {
+        $('#inputItemCode').empty();
+
+        $('#inputItemCode').append('<option selected>Select code</option>');
+        for (let index in itemDetails) {
+            let optionI = $('<option value="' + index + '">' + itemDetails[index].itemCode + '</option>');
+            $('#inputItemCode').append(optionI);
+
+
+        }
+    }
+
+    function loadItemName() {
+        for (let index in itemDetails) {
+            $('#itemName').empty();
+            let optionName = $('<option value="' + index + '">' + itemDetails[index].itemName + '</option>');
+            $('#itemName').val(itemDetails[index].itemName);
+        }
+    }
+
+    function customerTableSelect() {
+        $("#tblCustomer>tr").click(function () {
+
+            let cId = $(this).children(":eq(0)").text();
+            let Cname = $(this).children(":eq(1)").text();
+            let addrs = $(this).children(":eq(2)").text();
+            let sal = $(this).children(":eq(3)").text();
+
+            $("#txtCustomerID").val(cId);
+            $("#txtCustomerName").val(Cname);
+            $("#txtCustomerAddress").val(addrs);
+            $("#txtCustomerSalary").val(sal);
+
+
+        });
+
+    }
+
+    function ItemTableSelect() {
+        $("#tblItems>tr").click(function () {
+            let itemId = $(this).children(":eq(0)").text();
+            let itemName = $(this).children(":eq(1)").text();
+            let itQt = $(this).children(":eq(2)").text();
+            let uPrice = $(this).children(":eq(3)").text();
+
+            $("#txtItemCode").val(itemId);
+            $("#txtItemName").val(itemName);
+            $("#txtQTY").val(itQt);
+            $("#txtUnitPrice").val(uPrice);
+
+
+        });
+
+    }
+
+    $("#btnDeleteCustomer").click(function () {
+        let tempId = $("#txtCustomerID").val();
+
+        for (let c = 0; c < cDetails.length; c++) {
+            if (cDetails[c].customerID == tempId) {
+                cDetails.splice(c, 1);
+                alert("deleted");
+
+            } else {
+                alert("not deleted");
+            }
+
+        }
 
 
     });
+
+    $("#btnDeleteIItem").click(function () {
+        let tempcode = $("#txtItemCode").val();
+
+        for (let f = 0; f < itemDetails.length; f++) {
+            if (itemDetails[c].itemCode == tempcode) {
+                cDetails.splice(f, 1);
+                alert("deleted");
+
+            } else {
+                alert("not deleted");
+            }
+
+        }
+
+
+    });
+
+
+    $("#btnUpdateCustomer").click(function () {
+        let tempCId = $("#txtCustomerID").val();
+        //
+        // for (let c = 0; c < cDetails.length; c++) {
+        //     if (cDetails[c].customerID==tempId){
+        //
+        //         alert("deleted");
+        //
+        //     }else {
+        //         alert("not deleted");
+        //     }
+        //
+        // }
+
+        updateCustomer(tempCId);
+
+
+    });
+
+
+    function searchCustomer(id) {
+        return cDetails.find(function (customer) {
+            return customer.customerID == id;
+        });
+    }
+
+    function updateCustomer(tId) {
+        let tempId = $("#txtCustomerID").val();
+        let tempname = $("#txtCustomerName").val();
+        let tempad = $("#txtCustomerAddress").val();
+        let temps = $("#txtCustomerSalary").val();
+
+
+        let searchCustomer1 = searchCustomer(tId);
+        searchCustomer1.customerID = tempId;
+        searchCustomer1.customerName = tempname;
+        searchCustomer1.customerAddress = tempad;
+        searchCustomer1.customerSalary = temps;
+
+
+    }
+    function setDetails(val){
+
+        $("#customerName").val(cDetails[val].customerName);
+        $("#customerAddress").val(cDetails[val].customerAddress);
+        $("#customerSalary").val(cDetails[val].customerSalary);
+
+        // alert(cDetails[val].customerName+","+cDetails[val].customerAddress+","+cDetails[val].customerSalary);
+    }
+
+    function setIDetails(val){
+        // itemName
+        // itemPrice
+        // qtyOnHand
+        $("#itemName").val(itemDetails[val].itemName);
+        $("#itemPrice").val(itemDetails[val].itemUnitePrice);
+        $("#qtyOnHand").val(itemDetails[val].itemQty);
+
+        // alert(cDetails[val].customerName+","+cDetails[val].customerAddress+","+cDetails[val].customerSalary);
+    }
+
+    $("#btnAddToCart").click(function (){
+
+
+
+    });
+
+
 
 </script>
 
