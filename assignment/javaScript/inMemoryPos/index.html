@@ -311,7 +311,8 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label class="form-label" for="inputCustomerID">Customer ID:</label>
-                        <select aria-label="Default select example" class="form-select" id="inputCustomerID" onchange="setDetails(this.value)">
+                        <select aria-label="Default select example" class="form-select" id="inputCustomerID"
+                                onchange="setDetails(this.value)">
 
                         </select>
                     </div>
@@ -338,7 +339,8 @@
                 <div class="row mt-1">
                     <div class="col-12 col-md-6 col-lg-6">
                         <label class="form-label" for="inputItemCode">Item Code:</label>
-                        <select aria-label="Default select example" class="form-select" id="inputItemCode" onchange="setIDetails(this.value)">
+                        <select aria-label="Default select example" class="form-select" id="inputItemCode"
+                                onchange="setIDetails(this.value)">
                             <option selected>Select Item</option>
                         </select>
                     </div>
@@ -420,6 +422,7 @@
                     </tr>
                     </thead>
                     <tbody id="orderTable">
+
 
                     </tbody>
                 </table>
@@ -530,78 +533,76 @@
         $('#PlaceOrderform').css('display', 'none');
         $('#AllOrderform').css('display', 'block');
     });
-    let cus=/^(C00-)[0-9]{3}$/;
+    let cus = /^(C00-)[0-9]{3}$/;
 
-    $("#txtCustomerID").keyup(function (event){
-        cus=/^(C00-)[0-9]{3}$/;
+    $("#txtCustomerID").keyup(function (event) {
+        cus = /^(C00-)[0-9]{3}$/;
         let b = cus.test($("#txtCustomerID").val());
-        if(b){
-            $("#txtCustomerID").css("border","2px solid green");
+        if (b) {
+            $("#txtCustomerID").css("border", "2px solid green");
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
+            if (keycode == '13') {
 
                 $("#txtCustomerName").focus();
             }
 
 
-        }else {
-            $("#txtCustomerID").css("border","2px solid red");
+        } else {
+            $("#txtCustomerID").css("border", "2px solid red");
         }
 
     });
 
-    $("#txtCustomerName").keyup(function (event){
+    $("#txtCustomerName").keyup(function (event) {
 
-        let check=/[a-z]{5}/.test($("#txtCustomerName").val())
+        let check = /[a-z]{5}/.test($("#txtCustomerName").val())
 
-        if (check){
-            $("#txtCustomerName").css("border","2px solid green");
+        if (check) {
+            $("#txtCustomerName").css("border", "2px solid green");
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
+            if (keycode == '13') {
                 $("#txtCustomerAddress").focus();
 
             }
 
-        }else {
-            $("#txtCustomerName").css("border","2px solid red");
+        } else {
+            $("#txtCustomerName").css("border", "2px solid red");
         }
     });
 
-    $("#txtCustomerAddress").keyup(function (event){
+    $("#txtCustomerAddress").keyup(function (event) {
 
-        let check=/[a-z]{5}/.test($("#txtCustomerAddress").val())
+        let check = /[a-z]{5}/.test($("#txtCustomerAddress").val())
 
-        if (check){
-            $("#txtCustomerAddress").css("border","2px solid green");
+        if (check) {
+            $("#txtCustomerAddress").css("border", "2px solid green");
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
+            if (keycode == '13') {
                 $("#txtCustomerSalary").focus();
 
             }
 
-        }else {
-            $("#txtCustomerAddress").css("border","2px solid red");
+        } else {
+            $("#txtCustomerAddress").css("border", "2px solid red");
         }
     });
 
-    $("#txtCustomerSalary").keyup(function (event){
+    $("#txtCustomerSalary").keyup(function (event) {
 
-        let check=/('(?!0$)[0-9]+(?:\\.[0-9]+)?')/.test($("#txtCustomerSalary").val())
+        let check = /('(?!0$)[0-9]+(?:\\.[0-9]+)?')/.test($("#txtCustomerSalary").val())
 
-        if (check){
-            $("#txtCustomerAddress").css("border","2px solid green");
+        if (check) {
+            $("#txtCustomerAddress").css("border", "2px solid green");
             var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13'){
+            if (keycode == '13') {
                 $("#btnSaveCustomer").focus();
 
             }
 
-        }else {
-            $("#txtCustomerSalary").css("border","2px solid red");
+        } else {
+            $("#txtCustomerSalary").css("border", "2px solid red");
         }
     });
-
-
 
 
     /*In class assignment*/
@@ -636,7 +637,6 @@
 
 
     );
-
 
 
     function clearCustomerTextField() {
@@ -852,32 +852,110 @@
 
 
     }
-    function setDetails(val){
+
+    function setDetails(val) {
 
         $("#customerName").val(cDetails[val].customerName);
         $("#customerAddress").val(cDetails[val].customerAddress);
         $("#customerSalary").val(cDetails[val].customerSalary);
 
-        // alert(cDetails[val].customerName+","+cDetails[val].customerAddress+","+cDetails[val].customerSalary);
     }
 
-    function setIDetails(val){
-        // itemName
-        // itemPrice
-        // qtyOnHand
+    function setIDetails(val) {
         $("#itemName").val(itemDetails[val].itemName);
         $("#itemPrice").val(itemDetails[val].itemUnitePrice);
         $("#qtyOnHand").val(itemDetails[val].itemQty);
-
-        // alert(cDetails[val].customerName+","+cDetails[val].customerAddress+","+cDetails[val].customerSalary);
     }
 
-    $("#btnAddToCart").click(function (){
+    let addTOCartD = [];
 
+    $("#btnAddToCart").click(function () {
+        $("#orderTable").empty();
 
+        let index = $("#inputItemCode").val();
+        let code = itemDetails[index].itemCode;
+        alert(code + "code fetched from array")
+        let iN = $("#itemName").val();
+        let iUP = $("#itemPrice").val();
+        let oQ = $("#buyQty").val();
 
+        let Tp = iUP * oQ;
+
+        let AddtoCardObj = {
+            itemCode : code,
+            itemName : iN,
+            unitPrice : iUP,
+            qty : oQ,
+            total : Tp,
+        };
+        if (addTOCartD.length < 1) {
+            addTOCartD.push(AddtoCardObj)
+        } else {
+
+            for (let j = 0; j < addTOCartD.length; j++) {
+
+                // alert(codeIndex);
+                let codeIndex = searchICode(code);
+
+                if (codeIndex !== -1) {
+                    qt = parseInt(addTOCartD[codeIndex].qty)
+                    qtad = parseInt(oQ)
+                    let tQ = qt + qtad;
+                    let Totalp = parseInt(addTOCartD[codeIndex].total + Tp);
+                    alert(Totalp)
+                    let data = {
+                        itemCode : code,
+                        itemName : iN,
+                        unitPrice : iUP,
+                        qty : tQ,
+                        total : Totalp,
+                    };
+                    addTOCartD.splice(codeIndex, 1);
+
+                    addTOCartD.push(data)
+                    break;
+                } else {
+                    addTOCartD.push(AddtoCardObj)
+                    break;
+                }
+
+            }
+        }
+        for (let j = 0; j < addTOCartD.length; j++) {
+
+            let code = addTOCartD[j].itemCode;
+            let iName = addTOCartD[j].itemName;
+            let iQty = addTOCartD[j].qty;
+            let TTotal = addTOCartD[j].total;
+            let iUnitePrice = addTOCartD[j].unitPrice;
+
+            let row = "<tr>" +
+                "<td>" + code + "</td>" +
+                "<td>" + iName + "</td>" +
+                "<td>" + iUnitePrice + "</td>" +
+                "<td>" + iQty + "</td>" +
+                "<td>" + TTotal + "</td>" +
+                "<tr/>";
+
+            $("#orderTable").append(row);
+        }
     });
 
+    function searchICode(code) {
+        for (let i = 0; i < addTOCartD.length; i++) {
+            if (addTOCartD[i].itemCode == code) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    // orderTable
+    // inputItemCode
+    // itemName
+    // itemPrice
+    // buyQty
 
 
 </script>
