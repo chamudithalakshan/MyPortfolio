@@ -376,7 +376,7 @@
             <div class="col-10 col-md-10 col-lg-3 p-3 mt-3 bg-white shadow-lg" style="height: max-content">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
-                        <h3 class="text-start p-1">Total: <span class="text-start text-danger">Rs. <span
+                        <h3 class="text-start p-1">Total: <span class="text-start text-danger" id="rupees">Rs. <span
                                 class="text-start text-danger" id="txtTotal"></span></span>
                         </h3>
                     </div>
@@ -868,25 +868,26 @@
     }
 
     let addTOCartD = [];
-
+    let fullTotal = 0;
     $("#btnAddToCart").click(function () {
         $("#orderTable").empty();
 
         let index = $("#inputItemCode").val();
         let code = itemDetails[index].itemCode;
-        alert(code + "code fetched from array")
         let iN = $("#itemName").val();
         let iUP = $("#itemPrice").val();
         let oQ = $("#buyQty").val();
 
         let Tp = iUP * oQ;
 
+        fullTotal = fullTotal + Tp;
+
         let AddtoCardObj = {
-            itemCode : code,
-            itemName : iN,
-            unitPrice : iUP,
-            qty : oQ,
-            total : Tp,
+            itemCode: code,
+            itemName: iN,
+            unitPrice: iUP,
+            qty: oQ,
+            total: Tp,
         };
         if (addTOCartD.length < 1) {
             addTOCartD.push(AddtoCardObj)
@@ -902,13 +903,12 @@
                     qtad = parseInt(oQ)
                     let tQ = qt + qtad;
                     let Totalp = parseInt(addTOCartD[codeIndex].total + Tp);
-                    alert(Totalp)
                     let data = {
-                        itemCode : code,
-                        itemName : iN,
-                        unitPrice : iUP,
-                        qty : tQ,
-                        total : Totalp,
+                        itemCode: code,
+                        itemName: iN,
+                        unitPrice: iUP,
+                        qty: tQ,
+                        total: Totalp,
                     };
                     addTOCartD.splice(codeIndex, 1);
 
@@ -939,7 +939,61 @@
 
             $("#orderTable").append(row);
         }
+
+        // totalFunction
+        $("#txtTotal").text(fullTotal)
     });
+
+    // set discount and sub total
+
+    $("#txtDiscount").keyup(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            let number2 = fullTotal - $("#txtDiscount").val();
+            alert(number2)
+            let number3 = $("#txtCash").val() - number2;
+            alert(number3);
+            $("#txtSubTotal").text(number2);
+
+            $("#txtBalance").val(number3);
+
+
+        }
+
+
+    });
+
+    let placeOrderD = [];
+    $("#btnPlaceOrder").click(function () {
+        let oderIdD = $("#orderId").val();
+        let orderDateD = $("#orderDate").val();
+        let cusIdD = $("#inputCustomerID option:selected").text();
+        let discountD = $("#txtDiscount").val();
+        let totalD = $("#txtSubTotal").text();
+        let pDetails = {
+            oderIdD,
+            orderDateD,
+            cusIdD,
+            discountD,
+            totalD,
+        }
+        placeOrderD.push(pDetails);
+
+        for (let i = 0; i < placeOrderD.length; i++) {
+            let oderIdD1 = placeOrderD[i].oderIdD;
+            let orderDateD1 = placeOrderD[i].orderDateD;
+            let cusIdD1 = placeOrderD[i].cusIdD;
+            let discountD1 = placeOrderD[i].discountD;
+            let totalD1 = placeOrderD[i].totalD;
+
+
+            let row = `<tr><td>${oderIdD1}</td><td>${orderDateD1}</td><td>${cusIdD1}</td><td>${discountD1}</td><td>${totalD1}</td></tr>`;
+            $("#tblAllOrders").append(row);
+        }
+alert("place Ordered SuccessFully!")
+
+    });
+
 
     function searchICode(code) {
         for (let i = 0; i < addTOCartD.length; i++) {
